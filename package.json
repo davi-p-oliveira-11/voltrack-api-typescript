@@ -1,0 +1,29 @@
+{
+  "name": "voltrack-api",
+  "version": "1.0.0",
+  "tyoe": "module",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "nodemon app.ts",
+    "build": "node app.ts",
+    "start": "node app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "The official API for Voltrack — a Voltaris Digital product",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.32.0",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.0",
+    "eslint": "^9.32.0",
+    "globals": "^16.3.0",
+    "nodemon": "^3.1.10",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.39.0"
+  }
+}
