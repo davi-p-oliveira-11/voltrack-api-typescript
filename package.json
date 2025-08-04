@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "The official API for Voltrack — a Voltaris Digital product",
   "dependencies": {
+    "dotenv": "^17.2.1",
     "express": "^5.1.0"
   },
   "devDependencies": {

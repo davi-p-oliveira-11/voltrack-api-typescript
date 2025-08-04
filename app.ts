@@ -1,13 +1,15 @@
 import express, {Request, Response} from 'express'
 
+import { PORT } from './config/env';
+
 const app = express();
 
 app.get('/', (req: Request, res: Response) => {
    res.send('Voltrack API is live!')
 });
 
-app.listen(3000, () => {
-    console.log('Voltrack API is running on http://localhost:3000')
+app.listen(PORT, () => {
+    console.log(`Voltrack API is running on http://localhost:${PORT}`)
 });
 
 

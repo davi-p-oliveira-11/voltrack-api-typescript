@@ -1,1 +1,6 @@
+# node modules
 /node_modules
+
+# dotenv variables
+.env
+.env.*.local
