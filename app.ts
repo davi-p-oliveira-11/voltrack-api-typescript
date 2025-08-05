@@ -1,5 +1,7 @@
 import express, {Request, Response} from 'express'
 import cookieParser from 'cookie-parser'
+import UserDocument from './@types/express'
+
 
 import { PORT } from './config/env';
 
