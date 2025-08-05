@@ -5,6 +5,7 @@ import { PORT } from './config/env';
 import userRouter from './routes/user.routes';
 import authRouter from './routes/auth.routes';
 import subscriptionRouter from './routes/subscriptions.routes';
+import connectToDatabase from './database/mongodb';
 
 const app = express();
 
@@ -16,8 +17,10 @@ app.get('/', (req: Request, res: Response) => {
    res.send('Voltrack API is live!')
 });
 
-app.listen(PORT, () => {
-    console.log(`Voltrack API is running on http://localhost:${PORT}`)
+app.listen(PORT, async () => {
+    console.log(`Voltrack API is running on http://localhost:${PORT}`);
+
+    connectToDatabase();
 });
 
 
