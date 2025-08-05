@@ -13,6 +13,7 @@
   "license": "ISC",
   "description": "The official API for Voltrack — a Voltaris Digital product",
   "dependencies": {
+    "cookie-parser": "^1.4.7",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "mongodb": "^6.18.0",
@@ -20,6 +21,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.32.0",
+    "@types/cookie-parser": "^1.4.9",
     "@types/express": "^5.0.3",
     "@types/node": "^24.2.0",
     "eslint": "^9.32.0",
