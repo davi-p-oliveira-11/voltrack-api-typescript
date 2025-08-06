@@ -9,7 +9,8 @@ const requiredEnv = ['PORT',
                      'ARCJET_ENV', 
                      'ARCJET_KEY', 
                      'QSTASH_TOKEN', 
-                     'QSTASH_URL'] as const;
+                     'QSTASH_URL',
+                     'EMAIL_PASSWORD'] as const;
 
 for (const key of requiredEnv) {
   if (!process.env[key]) {
@@ -26,3 +27,4 @@ export const ARCJET_ENV = process.env.ARCJET_ENV as string;
 export const ARCJET_KEY = process.env.ARCJET_KEY as string;
 export const QSTASH_TOKEN = process.env.QSTASH_TOKEN as string;
 export const QSTASH_URL = process.env.QSTASH_URL as string;
+export const EMAIL_PASSWORD = process.env.EMAIL_PASSWORD as string;
