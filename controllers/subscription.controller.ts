@@ -1,5 +1,6 @@
 import {Request, Response, NextFunction} from 'express'
 import Subscription from '../models/subscription.model';
+import { workflowClient } from '../config/upstash';
 
 export const createSubscription = async (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -7,8 +8,19 @@ export const createSubscription = async (req: Request, res: Response, next: Next
       ...req.body,
       user: req.user._id,
     });
+
+    await workflowClient.trigger( {
+      url: `${SERVER_URL}/api/v1/workflows/subscription/reminder`,
+      body: {
+        subscriptionId: subscription.id,
+      },
+      headers: {
+        'content-type': 'application/json',
+      },
+      retries: 0,
+    })
     
-    res.status(201).json({ success: true, data: subscription });
+    res.status(201).json({ success: true, data: {subscription, workflowRunId } });
   } catch (error) {
     next(error);
   }
